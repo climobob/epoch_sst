@@ -1,0 +1,35 @@
+v2.1.nc -- link to directory with oiv2 original files
+	traditional -- 365 files by day of 30 yr climatology, 9/1/1981 ++
+        traditional_residual -- summary by day of year and overall of residuals of next decade
+        new_climo -- first_pass.nc -- mean, trend, harmonics, .. of 30 yrs from 9/1/1981++
+        new_residual -- 30 years minus new climatology
+
+
+python packages ---------------------------------------------------------
+ncoutput.py      -- netcdf output support
+harmonic_grid.py -- harmonic analysis support for grids FIX: polish trend+harmonics
+functions.py     -- misc. functions
+ 
+        
+new_first.py -- compute mean, slope, intercept, first 6 harmonics of annual cycle (ampl,phase), write out first_pass.nc
+maps.py      -- compute and plot mean, sd, skew, kurtosis; slope, intercept; harmonic amplitudes
+
+new_residuals2.py -- use newres1_30.nc to orthogonalize w.r.t. Nino 3.4, write out residue a) for 1981/9/1+30 years, for 2011/9/1+10 years RG
+map2_nino.py       -- compute and plot as for maps2.py FIX: reconcile/merge/...
+
+
+old_first.py -- compute traditional climatology 30 years from 9/1/1981++
+oldres_maps.py   -- plot residual stats from old climatology
+
+trad_residuals1.py -- doesn't really fit its name. Computes a second pass estimating moments (sumx2 etc.) using deviations from climatology, hopefully more accurately than first_pass working with full temperatures.
+
+
+old_residuals.py -- compute residuals for next decade
+new_res_decade.py -- new climo compute residuals for the next decade
+
+delta:
+delta.py     -- look at differences between two 'first pass' files (from new_first)
+
+points:
+acor_new.py -- compute the full autocorrelation of residuals from the new climatology
+acor_old.py -- compute the full autocorrelation of residuals from the old climatology
